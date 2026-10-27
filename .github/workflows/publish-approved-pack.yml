@@ -14,6 +14,7 @@ concurrency:
 
 jobs:
   publish:
+    if: ${{ vars.PORTAL_BASE_URL != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out publication repository
@@ -35,10 +36,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ -z "${PORTAL_BASE_URL:-}" ]; then
-            echo "Repository variable PORTAL_BASE_URL is not configured."
-            exit 1
-          fi
           base="${PORTAL_BASE_URL%/}"
           mkdir -p .publisher
           curl --fail --location --retry 3 "$base/github-publisher.mjs" -o .publisher/github-publisher.mjs
