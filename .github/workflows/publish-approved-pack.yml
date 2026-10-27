@@ -1,0 +1,73 @@
+name: Publish approved community pack
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_url:
+        description: Direct GitHub Release asset URL from the approved creator submission
+        required: true
+        type: string
+      expected_sha256:
+        description: Expected SHA-256 from the approved submission
+        required: true
+        type: string
+      pack_id:
+        description: Stable pack ID
+        required: true
+        type: string
+      version:
+        description: Pack version
+        required: true
+        type: string
+      asset_name:
+        description: Final .dugoutpack filename
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate input filename
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "${{ inputs.asset_name }}" in
+            *.dugoutpack) ;;
+            *) echo "asset_name must end in .dugoutpack"; exit 1 ;;
+          esac
+
+      - name: Download approved source asset
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3             --output "${{ inputs.asset_name }}"             "${{ inputs.source_url }}"
+
+      - name: Verify SHA-256
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(sha256sum "${{ inputs.asset_name }}" | awk '{print $1}')"
+          expected="$(printf '%s' "${{ inputs.expected_sha256 }}" | tr '[:upper:]' '[:lower:]')"
+          if [ "$actual" != "$expected" ]; then
+            echo "SHA-256 mismatch"
+            echo "Expected: $expected"
+            echo "Actual:   $actual"
+            exit 1
+          fi
+
+      - name: Publish immutable GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="pack-${{ inputs.pack_id }}-v${{ inputs.version }}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag already exists. Refusing to overwrite."
+            exit 1
+          fi
+          gh release create "$tag"             "${{ inputs.asset_name }}#${{ inputs.asset_name }}"             --title "${{ inputs.pack_id }} v${{ inputs.version }}"             --notes "Approved community data pack for The Dugout '27."
