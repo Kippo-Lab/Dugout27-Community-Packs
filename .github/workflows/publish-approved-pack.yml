@@ -1,73 +1,65 @@
-name: Publish approved community pack
+name: Validate and publish community packs
 
 on:
   workflow_dispatch:
-    inputs:
-      source_url:
-        description: Direct GitHub Release asset URL from the approved creator submission
-        required: true
-        type: string
-      expected_sha256:
-        description: Expected SHA-256 from the approved submission
-        required: true
-        type: string
-      pack_id:
-        description: Stable pack ID
-        required: true
-        type: string
-      version:
-        description: Pack version
-        required: true
-        type: string
-      asset_name:
-        description: Final .dugoutpack filename
-        required: true
-        type: string
+  schedule:
+    - cron: "*/10 * * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: community-pack-publisher
+  cancel-in-progress: false
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Validate input filename
-        shell: bash
-        run: |
-          set -euo pipefail
-          case "${{ inputs.asset_name }}" in
-            *.dugoutpack) ;;
-            *) echo "asset_name must end in .dugoutpack"; exit 1 ;;
-          esac
+      - name: Check out publication repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Download approved source asset
-        shell: bash
-        run: |
-          set -euo pipefail
-          curl --fail --location --retry 3             --output "${{ inputs.asset_name }}"             "${{ inputs.source_url }}"
+      - name: Configure Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
 
-      - name: Verify SHA-256
+      - name: Install Firebase client SDK
+        run: npm install --no-save firebase@13.1.0
+
+      - name: Download current Kippo Lab validator/publisher
+        env:
+          PORTAL_BASE_URL: ${{ vars.PORTAL_BASE_URL }}
         shell: bash
         run: |
           set -euo pipefail
-          actual="$(sha256sum "${{ inputs.asset_name }}" | awk '{print $1}')"
-          expected="$(printf '%s' "${{ inputs.expected_sha256 }}" | tr '[:upper:]' '[:lower:]')"
-          if [ "$actual" != "$expected" ]; then
-            echo "SHA-256 mismatch"
-            echo "Expected: $expected"
-            echo "Actual:   $actual"
+          if [ -z "${PORTAL_BASE_URL:-}" ]; then
+            echo "Repository variable PORTAL_BASE_URL is not configured."
             exit 1
           fi
+          base="${PORTAL_BASE_URL%/}"
+          mkdir -p .publisher
+          curl --fail --location --retry 3 "$base/github-publisher.mjs" -o .publisher/github-publisher.mjs
+          curl --fail --location --retry 3 "$base/pack-validator.js" -o .publisher/pack-validator.mjs
+          curl --fail --location --retry 3 "$base/firebase-config.js" -o .publisher/firebase-config.mjs
 
-      - name: Publish immutable GitHub Release
+      - name: Validate queued submissions and publish approved packs
         env:
           GH_TOKEN: ${{ github.token }}
+        run: node .publisher/github-publisher.mjs
+
+      - name: Commit catalogue and validation results
         shell: bash
         run: |
           set -euo pipefail
-          tag="pack-${{ inputs.pack_id }}-v${{ inputs.version }}"
-          if gh release view "$tag" >/dev/null 2>&1; then
-            echo "Release $tag already exists. Refusing to overwrite."
-            exit 1
+          git config user.name "Kippo Lab Data Pack Publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add catalog.json validation-results.json publication-results.json
+          if git diff --cached --quiet; then
+            echo "No publication-state changes."
+            exit 0
           fi
-          gh release create "$tag"             "${{ inputs.asset_name }}#${{ inputs.asset_name }}"             --title "${{ inputs.pack_id }} v${{ inputs.version }}"             --notes "Approved community data pack for The Dugout '27."
+          git commit -m "Update community pack publication state"
+          git push
