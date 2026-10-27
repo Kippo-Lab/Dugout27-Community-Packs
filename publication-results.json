@@ -1,5 +1,30 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T18:45:53.590Z",
-  "results": {}
+  "generated_at": "2026-10-27T19:30:14.944Z",
+  "results": {
+    "dugout27-test-pack_1793126526340": {
+      "status": "published",
+      "published_at": "2026-10-27T19:30:14.943Z",
+      "release_tag": "pack-dugout27-test-pack-v0.1",
+      "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-dugout27-test-pack-v0.1/test_v1_v0_1.dugoutpack",
+      "catalog_entry": {
+        "pack_id": "dugout27-test-pack",
+        "pack_name": "Test_v1",
+        "creator_name": "Kippo Lab",
+        "pack_version": "0.1",
+        "minimum_game_version": "1.1.8",
+        "pack_schema_version": 1,
+        "status": "approved",
+        "featured": false,
+        "description": "",
+        "league_count": 10,
+        "club_count": 110,
+        "player_count": 2200,
+        "size_bytes": 2404290,
+        "sha256": "eaaae4bc122f1987deb1d884b035534ef8ce66ff5e4b78e7d4f31db7562ea4f0",
+        "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-dugout27-test-pack-v0.1/test_v1_v0_1.dugoutpack",
+        "submission_id": "dugout27-test-pack_1793126526340"
+      }
+    }
+  }
 }
