@@ -1,6 +1,23 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T17:51:20.309Z",
-  "cursor": null,
-  "results": {}
+  "generated_at": "2026-10-27T18:45:53.280Z",
+  "cursor": {
+    "seconds": 1793126528,
+    "nanoseconds": 694000000
+  },
+  "results": {
+    "dugout27-test-pack_1793126526340": {
+      "status": "passed",
+      "checked_at": "2026-10-27T18:45:53.279Z",
+      "sha256": "eaaae4bc122f1987deb1d884b035534ef8ce66ff5e4b78e7d4f31db7562ea4f0",
+      "pack_name": "Test_v1",
+      "creator_name": "Kippo Lab",
+      "pack_version": "0.1",
+      "league_count": 10,
+      "club_count": 110,
+      "player_count": 2200,
+      "logo_count": 0,
+      "warnings": []
+    }
+  }
 }
