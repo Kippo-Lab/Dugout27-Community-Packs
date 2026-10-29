@@ -1,23 +1,23 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-29T02:17:47.094Z",
+  "generated_at": "2026-10-29T05:57:45.000Z",
   "packs": [
     {
       "pack_id": "dugout27-test-pack",
-      "pack_name": "Test_v1",
+      "pack_name": "2026/27 Community Data Pack",
       "creator_name": "Kippo Lab",
-      "pack_version": "0.1",
-      "minimum_game_version": "1.1.8",
+      "pack_version": "0.1-test",
+      "minimum_game_version": "0.8.0",
       "pack_schema_version": 1,
       "status": "approved",
       "featured": false,
-      "description": "",
-      "league_count": 10,
-      "club_count": 110,
-      "player_count": 2200,
-      "size_bytes": 2404290,
-      "sha256": "eaaae4bc122f1987deb1d884b035534ef8ce66ff5e4b78e7d4f31db7562ea4f0",
-      "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-dugout27-test-pack-v0.1/test_v1_v0_1.dugoutpack",
+      "description": "BB playable test package for the 2026/27 Community Data Pack.",
+      "league_count": 25,
+      "club_count": 466,
+      "player_count": 13256,
+      "size_bytes": 1033567,
+      "sha256": "eb976677c45ed704fb22e4c134983cf4d416a90f9fc06d632a64fda4cf3934ec",
+      "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-community-data-bb-test/Dugout27_2026_27_CommunityDataPack_BB_TEST.dugoutpack",
       "submission_id": "dugout27-test-pack_1793126526340"
     }
   ]
