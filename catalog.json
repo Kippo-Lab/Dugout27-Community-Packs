@@ -1,5 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-29T15:37:51.987Z",
-  "packs": []
+  "generated_at": "2026-10-29T20:12:35Z",
+  "packs": [
+    {
+      "pack_id": "dugout27-community-gemini-test",
+      "pack_name": "2026/27 Pack - Updated Players name and Club",
+      "pack_version": "0.1-test",
+      "minimum_game_version": "0.8.0",
+      "pack_schema_version": 1,
+      "status": "approved",
+      "featured": false,
+      "description": "Updated 2026/27 Community Data Pack test package with merged player ratings, attributes, free agents and secondary-position ratings.",
+      "league_count": 25,
+      "club_count": 466,
+      "player_count": 13318,
+      "size_bytes": 1225179,
+      "sha256": "4eab197e1bb788c6c4cc7d1f197c8501059ac2a7d92b20ce4a1c108c29972cd9",
+      "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-community-data-gemini-test/Dugout27_CommunityPack_GeminiMerged_SecondaryRatings_TEST.dugoutpack"
+    }
+  ]
 }
