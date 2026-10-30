@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T21:47:19.588Z",
+  "generated_at": "2026-10-30T21:55:43.578Z",
   "packs": [
     {
       "pack_id": "dugout27-community-gemini-test",
@@ -19,6 +19,24 @@
       "sha256": "4eab197e1bb788c6c4cc7d1f197c8501059ac2a7d92b20ce4a1c108c29972cd9",
       "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-dugout27-community-gemini-test-v0.1-test/Dugout27_CommunityPack_GeminiMerged_SecondaryRatings_TEST.dugoutpack",
       "submission_id": "dugout27-community-gemini-test_1793308147575"
+    },
+    {
+      "pack_id": "2026_27_community_data_pack_ash",
+      "pack_name": "2026/27 Community Data Pack",
+      "creator_name": "Ash",
+      "pack_version": "1.0",
+      "minimum_game_version": "1.1.8",
+      "pack_schema_version": 1,
+      "status": "approved",
+      "featured": false,
+      "description": "",
+      "league_count": 25,
+      "club_count": 466,
+      "player_count": 13318,
+      "size_bytes": 1473207,
+      "sha256": "677898b36d05d33929d15e2ae1a67be86d38a7d42861786de96c6e61c71242d7",
+      "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-2026_27_community_data_pack_ash-v1.0/Dugout27_2026_27_CommunityDataPack_Ash_v1_0.dugoutpack",
+      "submission_id": "2026_27_community_data_pack_ash_1793396436182"
     }
   ]
 }
