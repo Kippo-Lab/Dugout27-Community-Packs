@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T18:41:29.795Z",
+  "generated_at": "2026-10-30T21:47:19.254Z",
   "cursor": {
-    "seconds": 1793308148,
-    "nanoseconds": 732000000
+    "seconds": 1793396436,
+    "nanoseconds": 759000000
   },
   "results": {
     "dugout27-test-pack_1793126526340": {
@@ -34,6 +34,24 @@
         "Vigo Academy has only one senior goalkeeper.",
         "Moreirense Rio has only one senior goalkeeper.",
         "Utrecht Noord has only one senior goalkeeper.",
+        "Ghent has only one senior goalkeeper."
+      ]
+    },
+    "2026_27_community_data_pack_ash_1793396436182": {
+      "status": "passed",
+      "checked_at": "2026-10-30T21:47:19.253Z",
+      "sha256": "677898b36d05d33929d15e2ae1a67be86d38a7d42861786de96c6e61c71242d7",
+      "pack_name": "2026/27 Community Data Pack",
+      "creator_name": "Ash",
+      "pack_version": "1.0",
+      "league_count": 25,
+      "club_count": 466,
+      "player_count": 13318,
+      "logo_count": 0,
+      "warnings": [
+        "Vigo Academy has only one senior goalkeeper.",
+        "Moreirense has only one senior goalkeeper.",
+        "Utrecht has only one senior goalkeeper.",
         "Ghent has only one senior goalkeeper."
       ]
     }
