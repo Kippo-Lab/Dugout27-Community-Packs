@@ -2,8 +2,6 @@ name: Validate and publish community packs
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "*/10 * * * *"
 
 permissions:
   contents: write
