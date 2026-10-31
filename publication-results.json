@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T22:24:54.655Z",
+  "generated_at": "2026-10-31T22:26:45.936Z",
   "results": {
     "dugout27-test-pack_1793126526340": {
       "status": "published",
@@ -120,6 +120,30 @@
         "sha256": "356d51053460b30ccd12ede939bf721b206fd5a1017b7f8072a76f5b30f21ec5",
         "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-2026_27_community_data_pack_ash-v1.2/Dugout27_Ash_v1_2_REDOWNLOAD.dugoutpack",
         "submission_id": "2026_27_community_data_pack_ash_1793428953353"
+      }
+    },
+    "26_27_players_name_and_club_name_fix_shantanu_1793485366096": {
+      "status": "published",
+      "published_at": "2026-10-31T22:26:45.928Z",
+      "release_tag": "pack-26_27_players_name_and_club_name_fix_shantanu-v1.2",
+      "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-26_27_players_name_and_club_name_fix_shantanu-v1.2/Dugout27_26-27_Players_name_and_Club_name_Fix_Shantanu_v1_2.dugoutpack",
+      "catalog_entry": {
+        "pack_id": "26_27_players_name_and_club_name_fix_shantanu",
+        "pack_name": "26/27 - Players name and Club name Fix",
+        "creator_name": "Shantanu",
+        "pack_version": "1.2",
+        "minimum_game_version": "1.1.8",
+        "pack_schema_version": 1,
+        "status": "approved",
+        "featured": false,
+        "description": "",
+        "league_count": 25,
+        "club_count": 466,
+        "player_count": 13319,
+        "size_bytes": 1291829,
+        "sha256": "5f8d4e120ac6cb72dfe2101d8c8e55ae786513dca1537ae8056066817ce42fe4",
+        "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-26_27_players_name_and_club_name_fix_shantanu-v1.2/Dugout27_26-27_Players_name_and_Club_name_Fix_Shantanu_v1_2.dugoutpack",
+        "submission_id": "26_27_players_name_and_club_name_fix_shantanu_1793485366096"
       }
     }
   }
