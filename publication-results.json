@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T06:21:14.985Z",
+  "generated_at": "2026-10-31T06:24:25.746Z",
   "results": {
     "dugout27-test-pack_1793126526340": {
       "status": "published",
@@ -72,6 +72,30 @@
         "sha256": "677898b36d05d33929d15e2ae1a67be86d38a7d42861786de96c6e61c71242d7",
         "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-2026_27_community_data_pack_ash-v1.0/Dugout27_2026_27_CommunityDataPack_Ash_v1_0.dugoutpack",
         "submission_id": "2026_27_community_data_pack_ash_1793396436182"
+      }
+    },
+    "2026_27_community_data_pack_ash_1793427595616": {
+      "status": "published",
+      "published_at": "2026-10-31T06:24:25.737Z",
+      "release_tag": "pack-2026_27_community_data_pack_ash-v1.1",
+      "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-2026_27_community_data_pack_ash-v1.1/Dugout27_2026_27_CommunityDataPack_Ash_v1_1.dugoutpack",
+      "catalog_entry": {
+        "pack_id": "2026_27_community_data_pack_ash",
+        "pack_name": "2026/27 Community Data Pack",
+        "creator_name": "Ash",
+        "pack_version": "1.1",
+        "minimum_game_version": "1.1.8",
+        "pack_schema_version": 1,
+        "status": "approved",
+        "featured": false,
+        "description": "",
+        "league_count": 25,
+        "club_count": 466,
+        "player_count": 13318,
+        "size_bytes": 1134800,
+        "sha256": "4fbadb762fc276d8c8b75e12539ea2d879f09efaff0676cba99e1f3cc1bb9ee2",
+        "download_url": "https://github.com/Kippo-Lab/Dugout27-Community-Packs/releases/download/pack-2026_27_community_data_pack_ash-v1.1/Dugout27_2026_27_CommunityDataPack_Ash_v1_1.dugoutpack",
+        "submission_id": "2026_27_community_data_pack_ash_1793427595616"
       }
     }
   }
