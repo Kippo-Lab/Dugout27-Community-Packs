@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T21:55:42.251Z",
+  "generated_at": "2026-10-31T06:21:14.668Z",
   "cursor": {
-    "seconds": 1793396436,
-    "nanoseconds": 759000000
+    "seconds": 1793427596,
+    "nanoseconds": 110000000
   },
   "results": {
     "dugout27-test-pack_1793126526340": {
@@ -44,6 +44,24 @@
       "pack_name": "2026/27 Community Data Pack",
       "creator_name": "Ash",
       "pack_version": "1.0",
+      "league_count": 25,
+      "club_count": 466,
+      "player_count": 13318,
+      "logo_count": 0,
+      "warnings": [
+        "Vigo Academy has only one senior goalkeeper.",
+        "Moreirense has only one senior goalkeeper.",
+        "Utrecht has only one senior goalkeeper.",
+        "Ghent has only one senior goalkeeper."
+      ]
+    },
+    "2026_27_community_data_pack_ash_1793427595616": {
+      "status": "passed",
+      "checked_at": "2026-10-31T06:21:14.667Z",
+      "sha256": "4fbadb762fc276d8c8b75e12539ea2d879f09efaff0676cba99e1f3cc1bb9ee2",
+      "pack_name": "2026/27 Community Data Pack",
+      "creator_name": "Ash",
+      "pack_version": "1.1",
       "league_count": 25,
       "club_count": 466,
       "player_count": 13318,
